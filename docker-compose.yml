@@ -1,0 +1,11 @@
+version: '2.1'
+
+services:
+  openui5_sdk:
+    build:
+      context: ./
+      args:
+        ui5_version: "1.61.2"
+    restart: always
+    ports:
+      - 5000:80
