@@ -17,5 +17,6 @@ RUN apk del .sdk
 RUN rm /var/www/${ui5_filename}
 
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./server.* /etc/nginx/
 
-EXPOSE 80
+EXPOSE 80 443
