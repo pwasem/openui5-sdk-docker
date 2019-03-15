@@ -8,8 +8,11 @@ Simply clone this repository.
 
 Run `docker-compose up -d --build`
 
-Browse to `http://localhost:5000/`
+Browse to `http://localhost:5000/` or `https://localhost:5443` (attention, self-signed SSL certificate!)
 
-Version can be defined using `ui5_version`.
+Version can be defined using `ui5_version` in both
+
+- `Dockerfile`
+- `.env`
 
 Enjoy!
