@@ -8,4 +8,4 @@ services:
         ui5_version: "1.69.1"
     restart: always
     ports:
-      - 5001:3000
+      - 500:3000
