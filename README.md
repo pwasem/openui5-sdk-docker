@@ -3,7 +3,7 @@ Docker image for serving an [OpenUI5](https://openui5.org/) SDK.
 
 ## Get started
 Simply 
-- clone` this repository.
+- `clone` this repository.
 - run `docker-compose up -d --build`
 - browse to `http://localhost:5000/`
 
