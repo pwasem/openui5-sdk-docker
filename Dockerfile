@@ -1,22 +1,38 @@
-FROM nginx:1.15.8-alpine
+FROM node:alpine
 
-ARG ui5_version="1.63.0"
+ARG ui5_version="1.69.1"
 ARG ui5_filename="openui5-sdk-${ui5_version}.zip"
-ARG ui5_url="https://openui5.hana.ondemand.com/downloads/${ui5_filename}"
+ARG ui5_url="https://github.com/SAP/openui5/releases/download/${ui5_version}/${ui5_filename}"
 
-RUN apk add --no-cache --virtual .sdk wget unzip
+WORKDIR /home/node/app
 
-RUN mkdir -p /var/www
+## copy node sources
+COPY . .
 
-RUN wget ${ui5_url} --no-check-certificate -P /var/www
+# install tmp. packages
+RUN apk add --no-cache --virtual .sdk wget unzip python make g++
 
-RUN unzip -o /var/www/${ui5_filename} -d /var/www
+# download sdk
+RUN wget ${ui5_url} --no-check-certificate -P /home/node/app
 
+# unzip sdk
+RUN unzip -o /home/node/app/${ui5_filename} -d /home/node/app/sdk
+
+# delete sdk.zip
+RUN rm /home/node/app/${ui5_filename}
+
+# install node_modules
+RUN yarn install --production
+
+# delete tmp. packages
 RUN apk del .sdk
 
-RUN rm /var/www/${ui5_filename}
+# expose port
+EXPOSE 3000
 
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
-COPY ./server.* /etc/nginx/
+# start server
+ENV NODE_ENV=production
+CMD [ "yarn", "serve" ]
 
-EXPOSE 80 443
+
+
