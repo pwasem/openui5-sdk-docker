@@ -13,7 +13,8 @@ const root = 'sdk';
         fastify.register(fastifyCors);
         // static
         fastify.register(fastifyStatic, {
-            root: path.join(__dirname, root)
+            root: path.join(__dirname, root),
+            dotfiles: 'allow'
         });
         // listen
         await fastify.listen(port, address);
