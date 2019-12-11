@@ -8,19 +8,19 @@ const address = '0.0.0.0';
 const root = 'sdk';
 
 (async () => {
-    try {
-        // cors
-        fastify.register(fastifyCors);
-        // static
-        fastify.register(fastifyStatic, {
-            root: path.join(__dirname, root),
-            dotfiles: 'allow'
-        });
-        // listen
-        await fastify.listen(port, address);
-    } catch (err) {
-        process.exit(1)
-    }
+  try {
+    // cors
+    fastify.register(fastifyCors);
+    // static
+    fastify.register(fastifyStatic, {
+      root: path.join(__dirname, root),
+      dotfiles: 'allow'
+    });
+    // listen
+    await fastify.listen(port, address);
+  } catch (err) {
+    process.exit(1)
+  }
 })();
 
 

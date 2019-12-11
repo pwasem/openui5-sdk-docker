@@ -1,11 +1,11 @@
-version: '2.1'
+version: "3.7"
 
 services:
   openui5_sdk:
     build:
       context: ./
       args:
-        ui5_version: "1.70.0"
+        ui5_version: "1.73.1"
     restart: always
     ports:
-      - 5000:3000
+      - "5000:3000"

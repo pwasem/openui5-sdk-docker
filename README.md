@@ -1,10 +1,13 @@
 # openui5-sdk-docker
 Docker image for serving an [OpenUI5](https://openui5.org/) SDK.
 
+## Prerequisites
+Make sure you have [Docker Compose](https://docs.docker.com/compose/) installed.
+
 ## Get started
 Simply 
 - `clone` this repository.
-- run `docker-compose up -d --build`
+- run `docker-compose up -d --build` (stop `docker-compose down`)
 - browse to `http://localhost:5000/`
 
 **Enjoy!**
@@ -12,7 +15,7 @@ Simply
 ## Configuration
 The desired OpenUI5 version can be defined setting `ui5_version` in your `docker-compose.yml`.
 
-### Behind the scenes
+## Behind the scenes
 
 The docker image itself is build upon the latest [node:alpine](https://github.com/nodejs/docker-node) image.
 

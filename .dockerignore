@@ -117,11 +117,15 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-### git
+# Git
 .gitignore
 .git
-README.md
-Dockerfile
 
-###docker
+# Docker
+Dockerfile
 docker-compose.yml
+
+# Other
+.editorconfig
+README.md
+
