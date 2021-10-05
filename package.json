@@ -12,6 +12,6 @@
   "dependencies": {
     "fastify": "^2.7.1",
     "fastify-cors": "^2.1.3",
-    "fastify-static": "^2.5.0"
+    "fastify-static": "^4.2.4"
   }
 }
